@@ -1,0 +1,24 @@
+{
+  "name": "errcode",
+  "version": "0.1.1",
+  "description": "an extension to Error object, provide errcode.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windsome/errcode.git"
+  },
+  "keywords": [
+    "js",
+    "error",
+    "code"
+  ],
+  "author": "windsome.feng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/windsome/errcode/issues"
+  },
+  "homepage": "https://github.com/windsome/errcode#readme"
+}

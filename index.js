@@ -1,32 +1,3 @@
-# errcode
-an extension to Error object, provide error code.   
-There maybe a lot of exceptions when working with koa and react, especially working with Koa2, there are too much try/catch, and the code become discusting.  
-But if I throw Error, and do error handling at the outest? we can skip over a lot of code.  
-But original Error only contain message attribute, no more other information. if we supply more, espcially the error code, maybe better.  
-
-# Getting Started
-1, ```npm install --save errcode``` to your project.  
-2, At the Koa2 entry and client side entry, register Errcodes  
-```
-import { registerErrcodes } from 'errcode';
-registerErrcodes({
-    ERR_UNKNOWN: 40001,
-    ERR_CODE1: 40002,
-    ERR_PARAM_ERROR: 40003,
-    ERR_NO_SUCH_ENTITY: 40004,
-    ERR_INSERT_DB_FAIL: 40005,
-    ERR_UPDATE_DB_FAIL: 40006
-});
-```
-or import from errcode file.  
-3, using errorcode.  
-```
-import Errcode from 'errcode';
-throw new Errcode("there is an error insert item XX!", Errcode.ERR_INSERT_DB_FAIL);
-```
-# Code
-code is simple.   
-```
 export const ERR_UNKNOWN = 40001;
 export const ERR_CODE1 = 40002;
 export const ERR_PARAM_ERROR = 40003;
@@ -60,10 +31,3 @@ export default function Errcode(message, errcode=ERR_UNKNOWN) {
 }
 Errcode.prototype = Object.create(Error.prototype);
 Errcode.prototype.constructor = Errcode;
-```
-
-# Contribute
-
-# License
-
-
