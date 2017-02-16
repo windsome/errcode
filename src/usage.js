@@ -31,7 +31,7 @@ export default from 'errcode';
  *
  * in your Test File, myfile.js
 
-    import Errcode from './myerrcode'
-    throw new Errcode('file read fail!', Errcode.ERR_FILE_READ_FAIL);
+    import Errcode, * as EC from './myerrcode'
+    throw new Errcode('file read fail!', EC.ERR_FILE_READ_FAIL);
  *
  */

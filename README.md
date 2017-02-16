@@ -20,8 +20,8 @@ export const ERR_ALREADY_EXIST = 40007;
 ```
 + now, you can use in other files, **TAKE CARE, HERE** import your own Errcode.js
 ```
-import Errcode from './Errcode'
-throw new Errcode("there is an error insert item XX!", Errcode.ERR_INSERT_DB_FAIL);
+import Errcode, * as EC from './Errcode'
+throw new Errcode("there is an error insert item XX!", EC.ERR_INSERT_DB_FAIL);
 ```
 # Code is simple. without this module, you can just create your own Errcode.js:
 ```
