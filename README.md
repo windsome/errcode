@@ -5,27 +5,25 @@ But if I throw Error, and do error handling at the outest? we can skip over a lo
 But original Error only contain message attribute, no more other information. if we supply more, espcially the error code, maybe better.  
 
 # Getting Started
-1, ```npm install --save errcode``` to your project.  
-2, At the Koa2 entry and client side entry, register Errcodes  
++ ```npm install --save errcode``` to your project.  
++ using errorcode.  
+create a new Errcode.js in your own project, and put all ERR_CODE in it, Errcode.js:
 ```
-import { registerErrcodes } from 'errcode';
-registerErrcodes({
-    ERR_UNKNOWN: 40001,
-    ERR_CODE1: 40002,
-    ERR_PARAM_ERROR: 40003,
-    ERR_NO_SUCH_ENTITY: 40004,
-    ERR_INSERT_DB_FAIL: 40005,
-    ERR_UPDATE_DB_FAIL: 40006
-});
+export default from 'errcode';
+export const ERR_UNKNOWN = 40001;
+export const ERR_CODE1 = 40002;
+export const ERR_PARAM_ERROR = 40003;
+export const ERR_NO_SUCH_ENTITY = 40004;
+export const ERR_INSERT_DB_FAIL = 40005;
+export const ERR_UPDATE_DB_FAIL = 40006;
+export const ERR_ALREADY_EXIST = 40007;
 ```
-or import from errcode file.  
-3, using errorcode.  
++ now, you can use in other files, **TAKE CARE, HERE** import your own Errcode.js
 ```
-import Errcode from 'errcode';
+import Errcode from './Errcode'
 throw new Errcode("there is an error insert item XX!", Errcode.ERR_INSERT_DB_FAIL);
 ```
-# Code
-code is simple.   
+# Code is simple. without this module, you can just create your own Errcode.js:
 ```
 export const ERR_UNKNOWN = 40001;
 export const ERR_CODE1 = 40002;
