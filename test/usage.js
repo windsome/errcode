@@ -24,7 +24,7 @@ export const ERR_FILE_READ_FAIL = 44001;
 export const ERR_UPLOAD_FAIL = 44002;
 export const ERR_UPLOAD_USER_ABORT = 44003;
 
-export default from 'errcode';
+export {default} from 'errcode';
 
 
 /*
